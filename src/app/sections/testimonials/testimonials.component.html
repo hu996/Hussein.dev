@@ -1,0 +1,12 @@
+<section id="testimonials" class="testimonials reveal">
+  <div class="wrap">
+    <span class="section-kicker">Proof</span>
+    <h3>Testimonials</h3>
+    <div class="grid">
+      <article class="quote-card" *ngFor="let item of testimonials">
+        <p>{{ item.quote }}</p>
+        <strong>{{ item.role }}</strong>
+      </article>
+    </div>
+  </div>
+</section>

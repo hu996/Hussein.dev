@@ -1,0 +1,31 @@
+<article class="project-card">
+  <div class="visual" aria-hidden="true">
+    <span>{{ project.category }}</span>
+    <div class="screen">
+      <i></i><i></i><i></i>
+    </div>
+  </div>
+  <div class="content">
+    <div class="meta">
+      <span class="category">{{ project.category }}</span>
+      <span class="status">{{ project.status }}</span>
+    </div>
+    <h3>{{ project.name }}</h3>
+    <p class="desc">{{ project.description }}</p>
+    <div class="story">
+      <strong>Context</strong>
+      <p>{{ project.problem }}</p>
+      <strong>Solution Delivered</strong>
+      <p>{{ project.solution }}</p>
+    </div>
+    <ul class="features">
+      <li *ngFor="let f of project.features">{{ f }}</li>
+    </ul>
+    <ul class="tech">
+      <li *ngFor="let t of project.technologies">{{ t }}</li>
+    </ul>
+    <div class="actions">
+      <button class="btn" type="button" (click)="caseStudy.emit()">View Case Study</button>
+    </div>
+  </div>
+</article>

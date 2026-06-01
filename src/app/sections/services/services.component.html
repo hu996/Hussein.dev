@@ -1,0 +1,13 @@
+<section id="services" class="services reveal">
+  <div class="wrap">
+    <span class="section-kicker">Capabilities</span>
+    <h3>Technical Capabilities</h3>
+    <div class="grid">
+      <div class="card" *ngFor="let s of services">
+        <span>{{ s.icon }}</span>
+        <h4>{{ s.title }}</h4>
+        <p>{{ s.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

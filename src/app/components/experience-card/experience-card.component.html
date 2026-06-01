@@ -1,0 +1,20 @@
+<div class="exp-card">
+  <div class="head">
+    <div class="logo">{{ item.company[0] }}</div>
+    <div>
+      <p class="role">{{ item.title }}</p>
+      <h4>{{ item.company }}</h4>
+    </div>
+    <span class="period">{{ item.period }}</span>
+  </div>
+  <div class="meta">{{ item.type }}</div>
+  <div class="domain">
+    <span *ngFor="let d of item.domain">{{ d }}</span>
+  </div>
+  <ul class="resp">
+    <li *ngFor="let r of item.responsibilities">{{ r }}</li>
+  </ul>
+  <div class="tech">
+    <span *ngFor="let tech of item.technologies">{{ tech }}</span>
+  </div>
+</div>

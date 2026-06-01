@@ -1,1 +1,242 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  color-scheme: dark;
+  --bg-primary: #060b14;
+  --bg-secondary: #0a1220;
+  --surface: #0f1b2d;
+  --surface-elevated: #142238;
+  --surface-soft: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f5f7fa;
+  --text-secondary: #b8c2d0;
+  --text-muted: #7f8ea3;
+  --accent: #8ab4f8;
+  --accent-2: #a78bfa;
+  --accent-3: #67e8f9;
+  --accent-soft: rgba(138, 180, 248, 0.12);
+  --bg: var(--bg-primary);
+  --glass: var(--surface-soft);
+  --line: var(--border);
+  --text: var(--text-primary);
+  --text-2: var(--text-secondary);
+  --muted: var(--text-muted);
+  --ink: #04111d;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 46px 46px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 72%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  width: 42vw;
+  height: 42vw;
+  right: -18vw;
+  top: 20vh;
+  pointer-events: none;
+  background: rgba(124, 198, 255, 0.08);
+  filter: blur(80px);
+  border-radius: 999px;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.wrap,
+.container {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+section {
+  scroll-margin-top: 82px;
+}
+
+.reveal {
+  animation: reveal 700ms ease both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+app-hero .hero {
+  min-height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8.5rem 0 6.5rem;
+  color: var(--text);
+}
+
+app-hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 18% 18%, rgba(124, 198, 255, 0.16), transparent 28rem), radial-gradient(circle at 82% 28%, rgba(77, 163, 255, 0.1), transparent 24rem);
+  animation: drift 9s ease-in-out infinite alternate;
+}
+
+app-hero .container {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.84fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+app-hero .eyebrow,
+app-hero .status {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid rgba(124, 198, 255, 0.24);
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+  color: var(--accent);
+  background: rgba(124, 198, 255, 0.1);
+  font-size: 0.84rem;
+  font-weight: 800;
+}
+
+app-hero h1 {
+  margin: 1.1rem 0;
+  max-width: 790px;
+  font-size: clamp(2.55rem, 5.4vw, 5.15rem);
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+app-hero h2 {
+  min-height: 2.4rem;
+  margin: 0 0 1rem;
+  color: var(--accent-2);
+  font-size: clamp(1.2rem, 2vw, 1.7rem);
+}
+
+app-hero .cursor { color: var(--accent); animation: blink 1s steps(1) infinite; }
+app-hero .summary { max-width: 68ch; color: var(--text-2); font-size: 1.08rem; line-height: 1.8; }
+app-hero .cta, app-hero .socials { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+app-hero .cta { margin-top: 1.6rem; }
+app-hero .socials { margin-top: 1.1rem; }
+app-hero .socials a { color: var(--muted); text-decoration: none; font-weight: 800; }
+app-hero .trusted-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.4rem; color: var(--muted); }
+app-hero .trusted-row span { border: 1px solid var(--line); border-radius: 999px; padding: 0.38rem 0.58rem; background: rgba(255, 255, 255, 0.025); font-size: 0.82rem; }
+
+app-hero .btn {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.72rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 900;
+  border: 1px solid transparent;
+}
+
+app-hero .primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: var(--ink); }
+app-hero .outline { border-color: var(--line); color: var(--text); background: rgba(255, 255, 255, 0.06); }
+app-hero .ghost { color: var(--accent); }
+app-hero .right { position: relative; }
+
+app-hero .dashboard-mockup {
+  width: min(100%, 450px);
+  margin-left: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(124, 198, 255, 0.1), transparent 44%),
+    rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+app-hero .mockup-top {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+app-hero .mockup-top span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+app-hero .mockup-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; padding: 1rem; }
+app-hero .metric, app-hero .chart, app-hero .terminal { border: 1px solid var(--line); border-radius: 16px; background: rgba(2, 6, 23, 0.45); padding: 1rem; }
+app-hero .metric strong, app-hero .metric span { display: block; }
+app-hero .metric strong { color: var(--accent); font-size: 2rem; }
+app-hero .metric span { color: var(--muted); }
+app-hero .chart { grid-column: 1 / -1; display: flex; align-items: end; gap: 0.7rem; min-height: 150px; }
+app-hero .chart i { flex: 1; border-radius: 999px 999px 0 0; background: linear-gradient(var(--accent), rgba(124, 198, 255, 0.1)); }
+app-hero .chart i:nth-child(1) { height: 44%; }
+app-hero .chart i:nth-child(2) { height: 70%; }
+app-hero .chart i:nth-child(3) { height: 54%; }
+app-hero .chart i:nth-child(4) { height: 86%; }
+app-hero .chart i:nth-child(5) { height: 62%; }
+app-hero .terminal { grid-column: 1 / -1; font-family: Consolas, monospace; color: var(--text-2); }
+app-hero .terminal p { margin: 0.25rem 0; }
+app-hero .terminal b { color: var(--accent-2); }
+app-hero .tech-cloud { display: flex; gap: 0.55rem; flex-wrap: wrap; justify-content: flex-end; margin-top: 1rem; }
+app-hero .tech-cloud span { padding: 0.5rem 0.65rem; color: var(--text-2); font-weight: 800; animation: float 4s ease-in-out infinite; }
+
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes drift { to { transform: translate3d(0, 18px, 0); } }
+@keyframes float { 50% { transform: translateY(-5px); } }
+
+@media (max-width: 860px) {
+  app-hero .hero { padding: 7rem 0 4rem; }
+  app-hero .container { grid-template-columns: 1fr; }
+  app-hero .dashboard-mockup { width: 100%; margin-left: 0; }
+  app-hero .tech-cloud { justify-content: flex-start; }
+}
+
+@media (max-width: 640px) {
+  .wrap,
+  .container {
+    width: min(100% - 32px, 1180px);
+  }
+
+  app-hero h1 {
+    font-size: clamp(2.1rem, 12vw, 3.2rem);
+  }
+}

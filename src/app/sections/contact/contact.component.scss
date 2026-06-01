@@ -1,0 +1,125 @@
+.contact {
+  padding: 110px 0;
+  color: var(--text);
+}
+
+.section-kicker {
+  color: var(--accent-2);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.contact h3 {
+  margin: 0.35rem 0 1.4rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1rem;
+}
+
+.left,
+.form {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(13, 26, 32, 0.76);
+}
+
+.availability {
+  width: fit-content;
+  border: 1px solid rgba(138, 180, 248, 0.28);
+  border-radius: 999px;
+  padding: 0.4rem 0.65rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 900;
+  font-size: 0.82rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.left p {
+  margin: 0 0 0.4rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.left a {
+  width: fit-content;
+  color: var(--accent);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.copy-btn {
+  width: fit-content;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.55rem 0.75rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--text);
+  outline: none;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: rgba(45, 212, 191, 0.55);
+}
+
+.form .btn {
+  justify-self: start;
+  background: var(--accent);
+  color: var(--ink);
+  border: 0;
+  padding: 0.72rem 1rem;
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 120;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(138, 180, 248, 0.32);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(15, 23, 42, 0.96);
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 900px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    padding: 60px 0;
+  }
+}

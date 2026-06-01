@@ -1,0 +1,29 @@
+<section id="saudi-experience" class="saudi reveal">
+  <div class="wrap">
+    <div class="intro">
+      <span class="section-kicker">Regional Enterprise Exposure</span>
+      <h3>Saudi Enterprise Experience</h3>
+      <p>
+        I worked with Saudi software companies such as Oasis Computer Systems and Sada,
+        contributing to enterprise solutions, dashboards, internal business systems,
+        reporting modules, API integrations, and operational platforms for business clients.
+      </p>
+      <div class="client-types">
+        <span *ngFor="let type of clientTypes">{{ type }}</span>
+      </div>
+    </div>
+    <div class="company-grid">
+      <article class="company-card" *ngFor="let company of companies">
+        <div class="logo">{{ company.company[0] }}</div>
+        <div>
+          <span>{{ company.type }}</span>
+          <h4>{{ company.company }}</h4>
+          <p>{{ company.responsibilities.join(' ') }}</p>
+          <div class="tech">
+            <small *ngFor="let tech of company.technologies">{{ tech }}</small>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

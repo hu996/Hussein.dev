@@ -1,0 +1,13 @@
+<section id="why-me" class="why reveal">
+  <div class="wrap">
+    <span class="section-kicker">Professional Value</span>
+    <h3>Core Strengths</h3>
+    <div class="grid">
+      <article *ngFor="let item of items">
+        <span>{{ item.icon }}</span>
+        <h4>{{ item.title }}</h4>
+        <p>{{ item.description }}</p>
+      </article>
+    </div>
+  </div>
+</section>

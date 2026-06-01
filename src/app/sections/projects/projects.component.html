@@ -1,0 +1,42 @@
+<section id="projects" class="projects">
+  <div class="wrap">
+    <span class="section-kicker">Selected Projects</span>
+    <h3>Case Studies</h3>
+    <div class="filters">
+      <button *ngFor="let c of categories" (click)="filter = c" [class.active]="filter===c">{{ c }}</button>
+    </div>
+    <div class="grid">
+      <app-project-card *ngFor="let p of items" [project]="p" (caseStudy)="openCaseStudy(p)"></app-project-card>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" *ngIf="selectedProject" (click)="closeCaseStudy()">
+    <article class="case-modal" role="dialog" aria-modal="true" aria-label="Project case study" (click)="$event.stopPropagation()">
+      <button class="close" type="button" aria-label="Close case study" (click)="closeCaseStudy()">×</button>
+      <span class="section-kicker">{{ selectedProject.category }}</span>
+      <h4>{{ selectedProject.name }}</h4>
+      <p>{{ selectedProject.description }}</p>
+      <div class="modal-grid">
+        <div>
+          <strong>My Role</strong>
+          <p>{{ selectedProject.role }}</p>
+        </div>
+        <div>
+          <strong>Professional Value</strong>
+          <p>{{ selectedProject.businessValue }}</p>
+        </div>
+        <div>
+          <strong>Problem</strong>
+          <p>{{ selectedProject.problem }}</p>
+        </div>
+        <div>
+          <strong>My Solution</strong>
+          <p>{{ selectedProject.solution }}</p>
+        </div>
+      </div>
+      <ul class="modal-tech">
+        <li *ngFor="let tech of selectedProject.technologies">{{ tech }}</li>
+      </ul>
+    </article>
+  </div>
+</section>

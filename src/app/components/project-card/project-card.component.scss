@@ -1,0 +1,147 @@
+.project-card {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
+  gap: 1.2rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.035));
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(138, 180, 248, 0.36);
+}
+
+.visual {
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(138, 180, 248, 0.16);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(138, 180, 248, 0.22), transparent 11rem),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(12, 18, 38, 0.72));
+}
+
+.visual > span {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: var(--accent);
+  font-weight: 950;
+}
+
+.screen {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 12%;
+  height: 58%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.5);
+  transform: perspective(700px) rotateX(8deg) rotateY(-9deg);
+}
+
+.screen i {
+  display: block;
+  height: 16px;
+  margin: 22px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.content {
+  padding: 0.4rem;
+}
+
+.meta,
+.tech,
+.features,
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category,
+.status {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.category {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.status {
+  color: var(--text-2);
+}
+
+h3 {
+  margin: 0.8rem 0;
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+  line-height: 1;
+}
+
+.desc,
+.story p {
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.story {
+  display: grid;
+  gap: 0.2rem;
+  margin: 1rem 0;
+}
+
+.story strong {
+  color: var(--accent-2);
+}
+
+.features,
+.tech {
+  list-style: none;
+  padding: 0;
+}
+
+.features li,
+.tech li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.34rem 0.55rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.045);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.btn {
+  margin-top: 0.5rem;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--ink);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 0 0 28px rgba(138, 180, 248, 0.14);
+}
+
+@media (max-width: 860px) {
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: 230px;
+  }
+}

@@ -1,0 +1,92 @@
+.exp-card {
+  position: relative;
+  background: rgba(13, 26, 32, 0.78);
+  padding: 1.2rem;
+  border-radius: 8px;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.exp-card::before {
+  content: "";
+  position: absolute;
+  left: -1.55rem;
+  top: 1.2rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(138, 180, 248, 0.1);
+}
+
+.exp-card .head {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  color: var(--ink);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  font-weight: 950;
+}
+
+.role {
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.exp-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.period {
+  flex: 0 0 auto;
+  color: var(--accent-2);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.exp-card .meta {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0.55rem 0;
+}
+
+.domain,
+.tech {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.domain span,
+.tech span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.32rem 0.52rem;
+  color: #dbe9eb;
+  font-size: 0.82rem;
+}
+
+.resp {
+  margin: 0.9rem 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .exp-card .head {
+    grid-template-columns: 1fr;
+  }
+}

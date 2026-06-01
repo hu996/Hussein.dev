@@ -1,0 +1,24 @@
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="section-kicker">Contact</span>
+    <h3>Professional Contact</h3>
+    <div class="cols">
+      <div class="left">
+        <span class="availability">Available for professional opportunities and consulting conversations</span>
+        <p>For enterprise web applications, APIs, dashboards, integrations, and backend architecture discussions.</p>
+        <a href="mailto:{{ data.email }}">{{ data.email }}</a>
+        <button type="button" class="copy-btn" (click)="copyEmail()">Copy Email</button>
+        <a href="assets/files/Hussein_Antar_CV.pdf" download="Hussein_Antar_CV.pdf">Download CV</a>
+        <a href="{{ data.linkedIn }}" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="{{ data.github }}" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+      <form class="form" (ngSubmit)="submit()">
+        <input [(ngModel)]="model.name" name="name" placeholder="Your name" required />
+        <input [(ngModel)]="model.email" name="email" placeholder="Your email" required />
+        <textarea [(ngModel)]="model.message" name="message" placeholder="Message" rows="4" required></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+  <div class="toast" *ngIf="toast">{{ toast }}</div>
+</section>

@@ -1,0 +1,9 @@
+<section id="stats" class="stats reveal">
+  <div class="wrap">
+    <article class="stat-card" *ngFor="let stat of stats">
+      <strong>{{ stat.value }}</strong>
+      <span>{{ stat.label }}</span>
+      <p>{{ stat.detail }}</p>
+    </article>
+  </div>
+</section>
