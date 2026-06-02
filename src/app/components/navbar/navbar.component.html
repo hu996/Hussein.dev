@@ -1,6 +1,6 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="container navbar-content">
-    <a class="logo" href="#hero">Hussein Antar</a>
+    <a class="logo" href="#hero">{{ i18n.portfolio().personal.name }}</a>
     
     <button class="hamburger" (click)="toggle()" aria-label="Toggle menu" [attr.aria-expanded]="isOpen">
       <span [class.open]="isOpen"></span>
@@ -10,13 +10,18 @@
     
     <ul [class.open]="isOpen" class="nav-links">
       <li *ngFor="let link of links">
-        <a [href]="'#' + link.id" [class.active]="activeSection === link.id" (click)="closeMenu()">{{ link.label }}</a>
+        <a [href]="'#' + link.id" [class.active]="activeSection === link.id" (click)="closeMenu()">
+          {{ i18n.navLabel(link.labelKey) }}
+        </a>
       </li>
     </ul>
+
+    <button class="lang-toggle" type="button" (click)="toggleLanguage()">
+      {{ i18n.labels().nav.switchLanguage }}
+    </button>
     
     <a href="assets/files/Hussein_Antar_CV.pdf" download="Hussein_Antar_CV.pdf" class="btn-cv" (click)="closeMenu()">
-      Download CV
+      {{ i18n.labels().nav.downloadCv }}
     </a>
   </div>
 </nav>
-

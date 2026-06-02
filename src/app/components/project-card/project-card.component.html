@@ -13,9 +13,9 @@
     <h3>{{ project.name }}</h3>
     <p class="desc">{{ project.shortDescription || project.description }}</p>
     <div class="story">
-      <strong>Business Context</strong>
+      <strong>{{ i18n.labels().projects.businessContext }}</strong>
       <p>{{ project.businessContext }}</p>
-      <strong>Solution Delivered</strong>
+      <strong>{{ i18n.labels().projects.solution }}</strong>
       <p>{{ project.solution }}</p>
     </div>
     <ul class="features">
@@ -25,7 +25,7 @@
       <li *ngFor="let t of project.technologies">{{ t }}</li>
     </ul>
     <div class="actions">
-      <button class="btn" type="button" (click)="caseStudy.emit()">View Case Study</button>
+      <button class="btn" type="button" (click)="caseStudy.emit()">{{ i18n.labels().projects.viewCaseStudy }}</button>
     </div>
   </div>
 </article>

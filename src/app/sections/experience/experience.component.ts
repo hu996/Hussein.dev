@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ExperienceCardComponent } from '../../components/experience-card/experience-card.component';
-import { PORTFOLIO } from '../../data/portfolio.data';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-experience',
@@ -11,5 +11,9 @@ import { PORTFOLIO } from '../../data/portfolio.data';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
-  items = PORTFOLIO.experience;
+  constructor(public i18n: LanguageService) {}
+
+  get items() {
+    return this.i18n.portfolio().experience;
+  }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
-import { PORTFOLIO } from '../../data/portfolio.data';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-contact',
@@ -15,7 +15,12 @@ export class ContactComponent {
   // Deploy settings: Execute as "Me", Who has access "Anyone".
   private readonly googleScriptUrl = 'PUT_YOUR_GOOGLE_SCRIPT_URL_HERE';
 
-  data = PORTFOLIO.personal;
+  constructor(public i18n: LanguageService) {}
+
+  get data() {
+    return this.i18n.portfolio().personal;
+  }
+
   model = { name: '', email: '', message: '', website: '' };
   statusMessage = '';
   statusType: 'success' | 'error' | '' = '';
@@ -23,7 +28,7 @@ export class ContactComponent {
 
   async copyEmail(): Promise<void> {
     await navigator.clipboard.writeText(this.data.email);
-    this.showStatus('Email copied to clipboard', 'success');
+    this.showStatus(this.i18n.labels().contact.copied, 'success');
   }
 
   async submit(form: NgForm): Promise<void> {
@@ -34,19 +39,19 @@ export class ContactComponent {
     }
 
     if (this.model.website) {
-      this.showStatus('Message sent successfully.', 'success');
+      this.showStatus(this.i18n.labels().contact.success, 'success');
       form.resetForm({ name: '', email: '', message: '', website: '' });
       return;
     }
 
     if (form.invalid || this.model.message.trim().length < 10) {
       form.control.markAllAsTouched();
-      this.showStatus('Please enter a valid name, email, and message of at least 10 characters.', 'error');
+      this.showStatus(this.i18n.labels().contact.validationError, 'error');
       return;
     }
 
     if (!this.googleScriptUrl || this.googleScriptUrl === 'PUT_YOUR_GOOGLE_SCRIPT_URL_HERE') {
-      this.showStatus('Contact form is not configured yet. Please add the Google Apps Script Web App URL.', 'error');
+      this.showStatus(this.i18n.labels().contact.configError, 'error');
       return;
     }
 
@@ -71,9 +76,9 @@ export class ContactComponent {
       });
 
       form.resetForm({ name: '', email: '', message: '', website: '' });
-      this.showStatus('Message sent successfully.', 'success');
+      this.showStatus(this.i18n.labels().contact.success, 'success');
     } catch {
-      this.showStatus('Could not send your message. Please try again or email me directly.', 'error');
+      this.showStatus(this.i18n.labels().contact.requestError, 'error');
     } finally {
       this.isSending = false;
     }

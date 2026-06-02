@@ -2,24 +2,19 @@
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="container">
     <div class="left reveal">
-      <span class="eyebrow">Full Stack .NET Developer</span>
-      <h1>Building enterprise-grade web applications, APIs, dashboards, and integrations with .NET and Angular.</h1>
+      <span class="eyebrow">{{ data.eyebrow }}</span>
+      <h1>{{ data.headline }}</h1>
       <h2>{{ typedText }}<span class="cursor">|</span></h2>
       <p class="summary">
-        Specialized in ASP.NET Core, Angular, SQL Server, backend architecture,
-        reporting systems, and business-focused web solutions.
+        {{ i18n.labels().hero.summary }}
       </p>
       <div class="cta">
-        <a href="assets/files/Hussein_Antar_CV.pdf" download="Hussein_Antar_CV.pdf" class="btn primary">Download CV</a>
-        <a href="#projects" class="btn outline">View Projects</a>
-        <a href="#contact" class="btn ghost">Contact</a>
+        <a href="assets/files/Hussein_Antar_CV.pdf" download="Hussein_Antar_CV.pdf" class="btn primary">{{ i18n.labels().nav.downloadCv }}</a>
+        <a href="#projects" class="btn outline">{{ i18n.labels().hero.viewProjects }}</a>
+        <a href="#contact" class="btn ghost">{{ i18n.labels().hero.contact }}</a>
       </div>
       <div class="trusted-row">
-        <span>Government systems</span>
-        <span>Saudi enterprise systems</span>
-        <span>Insurance platforms</span>
-        <span>Dashboards</span>
-        <span>API integrations</span>
+        <span *ngFor="let item of i18n.labels().hero.trusted">{{ item }}</span>
       </div>
       <div class="socials" aria-label="Social links">
         <a [href]="data.github" target="_blank" rel="noreferrer">GitHub</a>
@@ -32,16 +27,16 @@
       <div class="dashboard-mockup" aria-label="Dashboard and code preview">
         <div class="mockup-top"><span></span><span></span><span></span></div>
         <div class="mockup-grid">
-          <div class="metric"><strong>98%</strong><span>API Health</span></div>
-          <div class="metric"><strong>KPI</strong><span>Dashboard KPIs</span></div>
+          <div class="metric"><strong>98%</strong><span>{{ i18n.labels().hero.metricApi }}</span></div>
+          <div class="metric"><strong>KPI</strong><span>{{ i18n.labels().hero.metricKpi }}</span></div>
           <div class="chart">
             <i></i><i></i><i></i><i></i><i></i>
           </div>
           <div class="terminal">
-            <p><b>SQL Server</b> optimized data layer</p>
-            <p><b>Angular UI</b> enterprise screens</p>
-            <p><b>REST API</b> secure integrations</p>
-            <p><b>Reporting</b> PDF / Excel workflows</p>
+            <p><b>SQL Server</b> {{ i18n.labels().hero.terminal[0] }}</p>
+            <p><b>Angular UI</b> {{ i18n.labels().hero.terminal[1] }}</p>
+            <p><b>REST API</b> {{ i18n.labels().hero.terminal[2] }}</p>
+            <p><b>Reporting</b> {{ i18n.labels().hero.terminal[3] }}</p>
           </div>
           <div class="system-flow">
             <span>Angular UI</span>

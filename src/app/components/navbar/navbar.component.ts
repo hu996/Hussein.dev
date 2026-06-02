@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,21 +10,29 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  constructor(public i18n: LanguageService) {}
+
   isOpen = false;
   isScrolled = false;
   activeSection = 'hero';
   links = [
-    { id: 'hero', label: 'Home' },
-    { id: 'profile', label: 'Profile' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'capabilities', label: 'Capabilities' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'hero', labelKey: 'home' },
+    { id: 'profile', labelKey: 'profile' },
+    { id: 'core-strengths', labelKey: 'strengths' },
+    { id: 'experience', labelKey: 'experience' },
+    { id: 'projects', labelKey: 'projects' },
+    { id: 'capabilities', labelKey: 'capabilities' },
+    { id: 'contact', labelKey: 'contact' }
   ];
 
   toggle() { this.isOpen = !this.isOpen; }
 
   closeMenu() { this.isOpen = false; }
+
+  toggleLanguage(): void {
+    this.i18n.toggle();
+    this.closeMenu();
+  }
 
   @HostListener('window:scroll')
   onScroll(): void {

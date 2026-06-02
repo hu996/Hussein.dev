@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PORTFOLIO } from '../../data/portfolio.data';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-capabilities',
@@ -10,5 +10,9 @@ import { PORTFOLIO } from '../../data/portfolio.data';
   styleUrls: ['./capabilities.component.scss']
 })
 export class CapabilitiesComponent {
-  capabilities = PORTFOLIO.capabilities;
+  constructor(public i18n: LanguageService) {}
+
+  get capabilities() {
+    return this.i18n.portfolio().capabilities;
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PORTFOLIO } from '../../data/portfolio.data';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-hero',
@@ -10,14 +10,22 @@ import { PORTFOLIO } from '../../data/portfolio.data';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  data = PORTFOLIO.personal;
   techBadges = ['ASP.NET Core', 'Angular', 'SQL Server', 'RabbitMQ', 'Redis', 'Azure'];
-  roles = ['Backend API Developer', 'Angular Frontend Developer', 'Dashboard Builder', 'Enterprise Systems Developer'];
   typedText = '';
   private roleIndex = 0;
   private charIndex = 0;
   private deleting = false;
   private timer?: number;
+
+  constructor(public i18n: LanguageService) {}
+
+  get roles() {
+    return this.i18n.labels().hero.roles;
+  }
+
+  get data() {
+    return this.i18n.portfolio().personal;
+  }
 
   ngOnInit(): void {
     if (typeof window !== 'undefined') {

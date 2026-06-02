@@ -9,7 +9,7 @@ export const PORTFOLIO: PortfolioData = {
     subheadline:
       '3+ years of experience delivering scalable systems using ASP.NET Core, Angular, SQL Server, clean architecture, reporting workflows, and business-focused solutions.',
     location: 'Cairo, Egypt',
-    email: 'husseinantar.58@gmail.com',
+    email: 'husseinantar58@gmail.com',
     linkedIn: 'https://linkedin.com/in/hussein-antar',
     github: 'https://github.com/hu996',
     summary:

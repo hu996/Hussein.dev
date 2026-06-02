@@ -49,6 +49,29 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+html[dir="rtl"] .terminal,
+html[dir="rtl"] .tech,
+html[dir="rtl"] .modal-tech {
+  direction: ltr;
+}
+
+html[dir="rtl"] .socials,
+html[dir="rtl"] .cta,
+html[dir="rtl"] .trusted-row,
+html[dir="rtl"] .filters,
+html[dir="rtl"] .tech-items {
+  justify-content: flex-start;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea {
+  text-align: right;
+}
+
 body::before {
   content: "";
   position: fixed;

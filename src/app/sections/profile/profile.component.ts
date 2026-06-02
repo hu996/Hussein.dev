@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PORTFOLIO } from '../../data/portfolio.data';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,6 +10,13 @@ import { PORTFOLIO } from '../../data/portfolio.data';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
-  data = PORTFOLIO.personal;
-  stats = PORTFOLIO.stats;
+  constructor(public i18n: LanguageService) {}
+
+  get data() {
+    return this.i18n.portfolio().personal;
+  }
+
+  get stats() {
+    return this.i18n.portfolio().stats;
+  }
 }

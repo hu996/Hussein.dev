@@ -1,14 +1,14 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="left">
-      <strong>Hussein Antar</strong>
-      <span>Full Stack .NET Developer building scalable web systems with .NET, Angular, and SQL Server.</span>
+      <strong>{{ i18n.portfolio().personal.name }}</strong>
+      <span>{{ i18n.labels().footer.summary }}</span>
     </div>
     <div class="right">
       <a href="https://github.com/hu996" target="_blank" rel="noreferrer">GitHub</a>
       <a href="https://linkedin.com/in/hussein-antar" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="#hero" class="top">Back to top</a>
+      <a href="#hero" class="top">{{ i18n.labels().footer.backToTop }}</a>
     </div>
-    <div class="copy">Copyright {{ year }} / Cairo, Egypt</div>
+    <div class="copy">{{ i18n.labels().footer.copyright }} {{ year }} / {{ i18n.portfolio().personal.location }}</div>
   </div>
 </footer>

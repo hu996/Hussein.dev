@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PORTFOLIO } from '../../data/portfolio.data';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-tech-stack',
@@ -8,7 +8,11 @@ import { PORTFOLIO } from '../../data/portfolio.data';
   styleUrls: ['./tech-stack.component.scss']
 })
 export class TechStackComponent {
-  stack = PORTFOLIO.techStack;
+  constructor(public i18n: LanguageService) {}
+
+  get stack() {
+    return this.i18n.portfolio().techStack;
+  }
   
   categories() {
     return Object.entries(this.stack);

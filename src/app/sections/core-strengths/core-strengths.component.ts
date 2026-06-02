@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PORTFOLIO } from '../../data/portfolio.data';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-core-strengths',
@@ -10,5 +10,9 @@ import { PORTFOLIO } from '../../data/portfolio.data';
   styleUrls: ['./core-strengths.component.scss']
 })
 export class CoreStrengthsComponent {
-  strengths = PORTFOLIO.strengths;
+  constructor(public i18n: LanguageService) {}
+
+  get strengths() {
+    return this.i18n.portfolio().strengths;
+  }
 }

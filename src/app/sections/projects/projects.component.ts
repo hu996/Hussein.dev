@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
-import { PORTFOLIO } from '../../data/portfolio.data';
 import { ProjectItem } from '../../core/models/portfolio.models';
+import { LanguageService } from '../../core/i18n/language.service';
 
 @Component({
   selector: 'app-projects',
@@ -12,18 +12,32 @@ import { ProjectItem } from '../../core/models/portfolio.models';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
-  all = PORTFOLIO.projects;
-  filter = 'All';
+  filterIndex = 0;
   selectedProject?: ProjectItem;
-  categories = ['All', 'Enterprise', 'Dashboard', 'Backend', 'Frontend', 'E-commerce', 'Integrations'];
+
+  constructor(public i18n: LanguageService) {}
+
+  get all() {
+    return this.i18n.portfolio().projects;
+  }
+
+  get categories() {
+    return this.i18n.labels().projects.filters;
+  }
+
   get items() {
-    if (this.filter === 'All') return this.all;
-    const query = this.filter.toLowerCase();
+    if (this.filterIndex === 0) return this.all;
+    const localizedFilter = this.categories[this.filterIndex].toLowerCase();
+    const englishFilter = ['All', 'Enterprise', 'Dashboard', 'Backend', 'Frontend', 'E-commerce', 'Integrations'][this.filterIndex].toLowerCase();
     return this.all.filter(p =>
       [p.name, p.category, p.description, p.problem, p.solution, p.technologies.join(' '), p.features.join(' ')]
         .join(' ')
         .toLowerCase()
-        .includes(query)
+        .includes(localizedFilter) ||
+      [p.name, p.category, p.description, p.problem, p.solution, p.technologies.join(' '), p.features.join(' ')]
+        .join(' ')
+        .toLowerCase()
+        .includes(englishFilter)
     );
   }
 

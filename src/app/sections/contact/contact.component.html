@@ -1,43 +1,43 @@
 <section id="contact" class="contact">
   <div class="wrap">
-    <span class="section-kicker">Contact</span>
-    <h3>Professional Contact</h3>
+    <span class="section-kicker">{{ i18n.labels().sections.contactKicker }}</span>
+    <h3>{{ i18n.labels().sections.contactTitle }}</h3>
     <div class="cols">
       <div class="left">
-        <span class="availability">Available for professional opportunities and consulting conversations</span>
-        <p>For enterprise web applications, APIs, dashboards, integrations, and backend architecture discussions.</p>
+        <span class="availability">{{ i18n.labels().contact.availability }}</span>
+        <p>{{ i18n.labels().contact.intro }}</p>
         <a href="mailto:{{ data.email }}">{{ data.email }}</a>
-        <button type="button" class="copy-btn" (click)="copyEmail()">Copy Email</button>
-        <a href="assets/files/Hussein_Antar_CV.pdf" download="Hussein_Antar_CV.pdf">Download CV</a>
+        <button type="button" class="copy-btn" (click)="copyEmail()">{{ i18n.labels().contact.copyEmail }}</button>
+        <a href="assets/files/Hussein_Antar_CV.pdf" download="Hussein_Antar_CV.pdf">{{ i18n.labels().nav.downloadCv }}</a>
         <a href="{{ data.linkedIn }}" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="{{ data.github }}" target="_blank" rel="noreferrer">GitHub</a>
       </div>
       <form class="form" #contactForm="ngForm" (ngSubmit)="submit(contactForm)" novalidate>
         <div class="field">
-          <label for="contact-name">Name</label>
+          <label for="contact-name">{{ i18n.labels().contact.name }}</label>
           <input
             id="contact-name"
             [(ngModel)]="model.name"
             name="name"
-            placeholder="Your name"
+            [placeholder]="i18n.labels().contact.namePlaceholder"
             required
             #name="ngModel"
             [class.invalid]="name.invalid && (name.touched || contactForm.submitted)"
             [disabled]="isSending"
           />
           <small class="field-error" *ngIf="name.invalid && (name.touched || contactForm.submitted)">
-            Name is required.
+            {{ i18n.labels().contact.nameError }}
           </small>
         </div>
 
         <div class="field">
-          <label for="contact-email">Email</label>
+          <label for="contact-email">{{ i18n.labels().contact.email }}</label>
           <input
             id="contact-email"
             [(ngModel)]="model.email"
             name="email"
             type="email"
-            placeholder="Your email"
+            [placeholder]="i18n.labels().contact.emailPlaceholder"
             required
             email
             #email="ngModel"
@@ -45,17 +45,17 @@
             [disabled]="isSending"
           />
           <small class="field-error" *ngIf="email.invalid && (email.touched || contactForm.submitted)">
-            Enter a valid email address.
+            {{ i18n.labels().contact.emailError }}
           </small>
         </div>
 
         <div class="field">
-          <label for="contact-message">Message</label>
+          <label for="contact-message">{{ i18n.labels().contact.message }}</label>
           <textarea
             id="contact-message"
             [(ngModel)]="model.message"
             name="message"
-            placeholder="Message"
+            [placeholder]="i18n.labels().contact.messagePlaceholder"
             rows="5"
             required
             minlength="10"
@@ -64,7 +64,7 @@
             [disabled]="isSending"
           ></textarea>
           <small class="field-error" *ngIf="message.invalid && (message.touched || contactForm.submitted)">
-            Message must be at least 10 characters.
+            {{ i18n.labels().contact.messageError }}
           </small>
         </div>
 
@@ -84,7 +84,7 @@
         </div>
 
         <button class="btn" type="submit" [disabled]="isSending">
-          {{ isSending ? 'Sending...' : 'Send Message' }}
+          {{ isSending ? i18n.labels().contact.sending : i18n.labels().contact.send }}
         </button>
       </form>
     </div>

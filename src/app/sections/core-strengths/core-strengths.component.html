@@ -1,8 +1,8 @@
 <section class="core-strengths">
   <div class="container">
     <div class="header">
-      <h2>Core Strengths</h2>
-      <p>What I bring to enterprise projects and teams</p>
+      <h2>{{ i18n.labels().sections.strengthsTitle }}</h2>
+      <p>{{ i18n.labels().sections.strengthsSubtitle }}</p>
     </div>
     <div class="strengths-grid">
       <div class="strength-card" *ngFor="let strength of strengths; let i = index" [class.featured]="i === 0">
