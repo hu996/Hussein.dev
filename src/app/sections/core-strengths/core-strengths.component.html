@@ -1,0 +1,14 @@
+<section class="core-strengths">
+  <div class="container">
+    <div class="header">
+      <h2>Core Strengths</h2>
+      <p>What I bring to enterprise projects and teams</p>
+    </div>
+    <div class="strengths-grid">
+      <div class="strength-card" *ngFor="let strength of strengths; let i = index" [class.featured]="i === 0">
+        <h3>{{ strength.title }}</h3>
+        <p>{{ strength.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

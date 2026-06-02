@@ -1,0 +1,81 @@
+.profile {
+  padding: 5rem 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.left h2 {
+  margin-bottom: 1.5rem;
+}
+
+.left p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 60ch;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+  }
+
+  .label {
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .detail {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .profile {
+    padding: 3rem 0;
+  }
+
+  .grid {
+    gap: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -11,10 +11,10 @@
       <span class="status">{{ project.status }}</span>
     </div>
     <h3>{{ project.name }}</h3>
-    <p class="desc">{{ project.description }}</p>
+    <p class="desc">{{ project.shortDescription || project.description }}</p>
     <div class="story">
-      <strong>Context</strong>
-      <p>{{ project.problem }}</p>
+      <strong>Business Context</strong>
+      <p>{{ project.businessContext }}</p>
       <strong>Solution Delivered</strong>
       <p>{{ project.solution }}</p>
     </div>

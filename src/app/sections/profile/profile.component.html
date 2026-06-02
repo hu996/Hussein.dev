@@ -1,0 +1,19 @@
+<section class="profile" id="profile">
+  <div class="container">
+    <div class="grid">
+      <div class="left">
+        <h2>Professional Profile</h2>
+        <p>{{ data.summary }}</p>
+      </div>
+      <div class="right">
+        <div class="stats-grid">
+          <div class="stat-card" *ngFor="let stat of stats">
+            <span class="value">{{ stat.value }}</span>
+            <span class="label">{{ stat.label }}</span>
+            <span class="detail">{{ stat.detail }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

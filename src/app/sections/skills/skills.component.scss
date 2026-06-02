@@ -2,7 +2,7 @@
   position: relative;
   padding: 110px 0;
   color: var(--text);
-  background: rgba(255, 255, 255, 0.025);
+  background: var(--bg-secondary);
   border-block: 1px solid var(--line);
 }
 
@@ -29,7 +29,8 @@
   padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: rgba(15, 27, 45, 0.78);
+  background: var(--surface);
+  box-shadow: var(--shadow-card, 0 12px 35px rgba(15, 23, 42, 0.08));
   transition: transform 180ms ease, border-color 180ms ease;
 }
 

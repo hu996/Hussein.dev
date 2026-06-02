@@ -14,11 +14,10 @@ export class NavbarComponent {
   activeSection = 'hero';
   links = [
     { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'Profile' },
+    { id: 'profile', label: 'Profile' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'services', label: 'Capabilities' },
-    { id: 'skills', label: 'Tech Stack' },
+    { id: 'capabilities', label: 'Capabilities' },
     { id: 'contact', label: 'Contact' }
   ];
 

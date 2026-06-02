@@ -12,13 +12,81 @@
         <a href="{{ data.linkedIn }}" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="{{ data.github }}" target="_blank" rel="noreferrer">GitHub</a>
       </div>
-      <form class="form" (ngSubmit)="submit()">
-        <input [(ngModel)]="model.name" name="name" placeholder="Your name" required />
-        <input [(ngModel)]="model.email" name="email" placeholder="Your email" required />
-        <textarea [(ngModel)]="model.message" name="message" placeholder="Message" rows="4" required></textarea>
-        <button class="btn" type="submit">Send Message</button>
+      <form class="form" #contactForm="ngForm" (ngSubmit)="submit(contactForm)" novalidate>
+        <div class="field">
+          <label for="contact-name">Name</label>
+          <input
+            id="contact-name"
+            [(ngModel)]="model.name"
+            name="name"
+            placeholder="Your name"
+            required
+            #name="ngModel"
+            [class.invalid]="name.invalid && (name.touched || contactForm.submitted)"
+            [disabled]="isSending"
+          />
+          <small class="field-error" *ngIf="name.invalid && (name.touched || contactForm.submitted)">
+            Name is required.
+          </small>
+        </div>
+
+        <div class="field">
+          <label for="contact-email">Email</label>
+          <input
+            id="contact-email"
+            [(ngModel)]="model.email"
+            name="email"
+            type="email"
+            placeholder="Your email"
+            required
+            email
+            #email="ngModel"
+            [class.invalid]="email.invalid && (email.touched || contactForm.submitted)"
+            [disabled]="isSending"
+          />
+          <small class="field-error" *ngIf="email.invalid && (email.touched || contactForm.submitted)">
+            Enter a valid email address.
+          </small>
+        </div>
+
+        <div class="field">
+          <label for="contact-message">Message</label>
+          <textarea
+            id="contact-message"
+            [(ngModel)]="model.message"
+            name="message"
+            placeholder="Message"
+            rows="5"
+            required
+            minlength="10"
+            #message="ngModel"
+            [class.invalid]="message.invalid && (message.touched || contactForm.submitted)"
+            [disabled]="isSending"
+          ></textarea>
+          <small class="field-error" *ngIf="message.invalid && (message.touched || contactForm.submitted)">
+            Message must be at least 10 characters.
+          </small>
+        </div>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="contact-website">Website</label>
+          <input
+            id="contact-website"
+            [(ngModel)]="model.website"
+            name="website"
+            tabindex="-1"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="form-status" *ngIf="statusMessage" [class.success]="statusType === 'success'" [class.error]="statusType === 'error'">
+          {{ statusMessage }}
+        </div>
+
+        <button class="btn" type="submit" [disabled]="isSending">
+          {{ isSending ? 'Sending...' : 'Send Message' }}
+        </button>
       </form>
     </div>
   </div>
-  <div class="toast" *ngIf="toast">{{ toast }}</div>
 </section>

@@ -1,11 +1,20 @@
 export interface PersonalInfo {
   name: string;
   title: string;
+  eyebrow?: string;
+  headline?: string;
+  subheadline?: string;
   location: string;
   email: string;
   linkedIn: string;
   github: string;
   summary: string;
+  trustLine?: string;
+}
+
+export interface StrengthItem {
+  title: string;
+  description: string;
 }
 
 export interface ExperienceItem {
@@ -20,17 +29,33 @@ export interface ExperienceItem {
 
 export interface ProjectItem {
   name: string;
+  title?: string;
   category: string;
+  status: string;
+  shortDescription?: string;
   description: string;
+  overview?: string;
+  businessContext: string;
   problem: string;
-  solution: string;
+  myRole?: string;
   features: string[];
+  backendWork?: string[];
+  frontendWork?: string[];
+  databaseWork?: string[];
+  integrations?: string[];
+  challenges?: string[];
+  solution: string;
   technologies: string[];
   role: string;
   impact: string;
   businessValue: string;
-  status: string;
+  visualType?: string;
   github?: string;
+  links?: {
+    github?: string;
+    live?: string;
+    caseStudy?: string;
+  };
 }
 
 export interface StatItem {
@@ -59,10 +84,13 @@ export interface WhyHireItem {
 export interface PortfolioData {
   personal: PersonalInfo;
   stats: StatItem[];
+  strengths: StrengthItem[];
   experience: ExperienceItem[];
   projects: ProjectItem[];
   skills: Record<string, string[]>;
+  capabilities: string[];
   services: ServiceItem[];
+  techStack: Record<string, string[]>;
   clients: string[];
   testimonials: TestimonialItem[];
   whyHire: WhyHireItem[];

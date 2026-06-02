@@ -15,25 +15,72 @@
       <button class="close" type="button" aria-label="Close case study" (click)="closeCaseStudy()">×</button>
       <span class="section-kicker">{{ selectedProject.category }}</span>
       <h4>{{ selectedProject.name }}</h4>
-      <p>{{ selectedProject.description }}</p>
+      <p>{{ selectedProject.overview || selectedProject.description }}</p>
       <div class="modal-grid">
         <div>
-          <strong>My Role</strong>
-          <p>{{ selectedProject.role }}</p>
-        </div>
-        <div>
-          <strong>Professional Value</strong>
-          <p>{{ selectedProject.businessValue }}</p>
+          <strong>Business Context</strong>
+          <p>{{ selectedProject.businessContext }}</p>
         </div>
         <div>
           <strong>Problem</strong>
           <p>{{ selectedProject.problem }}</p>
         </div>
         <div>
-          <strong>My Solution</strong>
-          <p>{{ selectedProject.solution }}</p>
+          <strong>My Role</strong>
+          <p>{{ selectedProject.myRole || selectedProject.role }}</p>
+        </div>
+        <div>
+          <strong>Professional Value</strong>
+          <p>{{ selectedProject.businessValue }}</p>
         </div>
       </div>
+
+      <div class="case-section">
+        <h5>Key Features</h5>
+        <ul>
+          <li *ngFor="let item of selectedProject.features">{{ item }}</li>
+        </ul>
+      </div>
+
+      <div class="case-columns">
+        <div>
+          <h5>Backend Implementation</h5>
+          <ul>
+            <li *ngFor="let item of selectedProject.backendWork">{{ item }}</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Frontend Implementation</h5>
+          <ul>
+            <li *ngFor="let item of selectedProject.frontendWork">{{ item }}</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Database & Performance</h5>
+          <ul>
+            <li *ngFor="let item of selectedProject.databaseWork">{{ item }}</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Integrations</h5>
+          <ul>
+            <li *ngFor="let item of selectedProject.integrations">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case-section">
+        <h5>Technical Challenges</h5>
+        <ul>
+          <li *ngFor="let item of selectedProject.challenges">{{ item }}</li>
+        </ul>
+      </div>
+
+      <div class="case-section">
+        <h5>Solution Delivered</h5>
+        <p>{{ selectedProject.solution }}</p>
+      </div>
+
       <ul class="modal-tech">
         <li *ngFor="let tech of selectedProject.technologies">{{ tech }}</li>
       </ul>

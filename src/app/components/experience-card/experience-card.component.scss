@@ -1,10 +1,11 @@
 .exp-card {
   position: relative;
-  background: rgba(13, 26, 32, 0.78);
+  background: var(--surface);
   padding: 1.2rem;
   border-radius: 8px;
   color: var(--text);
   border: 1px solid var(--line);
+  box-shadow: var(--shadow-card, 0 12px 35px rgba(15, 23, 42, 0.08));
 }
 
 .exp-card::before {
@@ -74,7 +75,7 @@
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0.32rem 0.52rem;
-  color: #dbe9eb;
+  color: var(--text-2);
   font-size: 0.82rem;
 }
 

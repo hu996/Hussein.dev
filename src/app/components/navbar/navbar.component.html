@@ -1,12 +1,22 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
-  <a class="brand" href="#hero" (click)="closeMenu()">Hussein.dev</a>
-  <button class="burger" (click)="toggle()" aria-label="Toggle menu" [attr.aria-expanded]="isOpen">
-    <span [class.open]="isOpen"></span>
-  </button>
-  <ul [class.open]="isOpen" class="links">
-    <li *ngFor="let link of links">
-      <a [href]="'#' + link.id" [class.active]="activeSection === link.id" (click)="closeMenu()">{{ link.label }}</a>
-    </li>
-    <li><a class="nav-cta" href="assets/files/Hussein_Antar_CV.pdf" download="Hussein_Antar_CV.pdf" (click)="closeMenu()">Download CV</a></li>
-  </ul>
+  <div class="container navbar-content">
+    <a class="logo" href="#hero">Hussein Antar</a>
+    
+    <button class="hamburger" (click)="toggle()" aria-label="Toggle menu" [attr.aria-expanded]="isOpen">
+      <span [class.open]="isOpen"></span>
+      <span [class.open]="isOpen"></span>
+      <span [class.open]="isOpen"></span>
+    </button>
+    
+    <ul [class.open]="isOpen" class="nav-links">
+      <li *ngFor="let link of links">
+        <a [href]="'#' + link.id" [class.active]="activeSection === link.id" (click)="closeMenu()">{{ link.label }}</a>
+      </li>
+    </ul>
+    
+    <a href="assets/files/Hussein_Antar_CV.pdf" download="Hussein_Antar_CV.pdf" class="btn-cv" (click)="closeMenu()">
+      Download CV
+    </a>
+  </div>
 </nav>
+

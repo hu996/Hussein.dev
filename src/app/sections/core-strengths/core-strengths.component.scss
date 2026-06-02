@@ -1,0 +1,69 @@
+.core-strengths {
+  padding: 5rem 0;
+  background: var(--bg-soft);
+  color: var(--text-main);
+}
+
+.header {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+  }
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.strength-card {
+  padding: 2rem;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+
+  h3 {
+    margin-bottom: 1rem;
+    color: var(--text-main);
+  }
+
+  p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  &:hover {
+    border-color: var(--accent-blue);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(-4px);
+  }
+
+  &.featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(79, 70, 229, 0.05));
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .core-strengths {
+    padding: 3rem 0;
+  }
+
+  .strengths-grid {
+    grid-template-columns: 1fr;
+  }
+}

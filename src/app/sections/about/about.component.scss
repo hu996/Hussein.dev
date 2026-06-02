@@ -1,6 +1,7 @@
 .about {
   padding: 110px 0;
   color: var(--text);
+  background: var(--bg-primary);
 }
 
 .about .wrap {
@@ -39,10 +40,11 @@
   min-height: auto;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.045);
+  background: var(--surface);
   padding: 0.9rem 1rem;
   border-radius: 8px;
   border: 1px solid var(--line);
+  box-shadow: var(--shadow-card, 0 12px 35px rgba(15, 23, 42, 0.08));
   color: var(--text-2);
   font-size: 0.98rem;
   font-weight: 850;

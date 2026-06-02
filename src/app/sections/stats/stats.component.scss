@@ -1,5 +1,6 @@
 .stats {
-  padding: 0 0 5rem;
+  padding: 0 0 80px;
+  background: var(--bg-primary);
 }
 
 .wrap {
@@ -11,10 +12,10 @@
 .stat-card {
   min-height: 168px;
   padding: 1rem;
-  border-radius: 8px;
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+  border-radius: 18px;
+  background: var(--surface);
   border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-card);
   transition: transform 180ms ease, border-color 180ms ease;
 }
 

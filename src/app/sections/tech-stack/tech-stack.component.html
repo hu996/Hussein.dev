@@ -1,0 +1,20 @@
+<section class="tech-stack" id="tech-stack">
+  <div class="container">
+    <div class="header">
+      <h2>Tech Stack</h2>
+      <p>Languages, frameworks, tools, and architectural patterns</p>
+    </div>
+    <div class="stack-grid">
+      @for (entry of categories(); track entry[0]) {
+        <div class="stack-category">
+          <h3>{{ entry[0] }}</h3>
+          <div class="tech-items">
+            @for (tech of entry[1]; track tech) {
+              <span class="tech-badge">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
