@@ -88,12 +88,12 @@ export const PORTFOLIO: PortfolioData = {
       company: 'Sada',
       title: '.NET / Full Stack Developer',
       period: 'Project-based engagement',
-      type: 'Saudi Software Company / Digital Solutions Provider',
-      domain: ['Saudi enterprise clients', 'Business automation', 'Dashboards and operational platforms'],
+      type: 'Private Pilgrims Services Company',
+      domain: ['Pilgrims services operations', 'Hajj service workflows', 'Dashboards and operational platforms'],
       responsibilities: [
-        'Delivered enterprise modules for business automation and reporting workflows.',
+        'Delivered operational modules for pilgrims services workflows and reporting.',
         'Built API endpoints and integrated Angular screens with backend services.',
-        'Supported dashboards, SQL Server queries, exports and operational reports.'
+        'Supported dashboards, SQL Server queries, exports and operational reports for service teams.'
       ],
       technologies: ['.NET Core', 'Angular', 'SQL Server', 'REST APIs', 'Dashboards', 'Reports']
     }
@@ -361,19 +361,19 @@ export const PORTFOLIO: PortfolioData = {
       visualType: 'integration'
     },
     {
-      name: 'Saudi Enterprise Systems for Oasis and Sada',
+      name: 'Saudi Enterprise Systems for Oasis and Sada Pilgrims Services',
       category: 'Enterprise',
       status: 'Private Enterprise Project',
       shortDescription:
-        'Saudi enterprise software work involving dashboards, reporting modules, internal systems, APIs, Angular interfaces, and integrations.',
+        'Saudi enterprise work involving Oasis software systems and Sada private pilgrims services workflows, dashboards, reports, APIs, and Angular interfaces.',
       description:
-        'Enterprise business modules, dashboards, reporting workflows and API integrations for Saudi software companies.',
+        'Enterprise business modules, dashboards, reporting workflows and API integrations for Saudi software and pilgrims services contexts.',
       overview:
-        'A group of Saudi enterprise software contributions focused on internal operations, business automation, dashboards, reporting, APIs, and Angular interfaces.',
+        'A group of Saudi enterprise contributions focused on internal operations, pilgrims services workflows, business automation, dashboards, reporting, APIs, and Angular interfaces.',
       businessContext:
-        'Saudi enterprise clients needed digital transformation modules, reporting workflows, internal systems, and operational platforms for private sector business teams.',
+        'Saudi business and pilgrims services teams needed digital transformation modules, reporting workflows, internal systems, and operational platforms.',
       problem:
-        'Saudi business clients needed internal systems to manage operations, reporting and platform integrations.',
+        'Saudi business and pilgrims services teams needed internal systems to manage operations, reporting and platform integrations.',
       myRole:
         'I contributed to backend APIs, Angular interfaces, SQL Server workflows, dashboards, reports, and integration-ready business modules.',
       solution:

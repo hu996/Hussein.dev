@@ -88,12 +88,12 @@ export const PORTFOLIO_AR: PortfolioData = {
       company: 'Sada',
       title: 'مطوّر .NET / Full Stack',
       period: 'تعاون بنظام المشاريع',
-      type: 'شركة برمجيات سعودية / حلول رقمية',
-      domain: ['عملاء مؤسسيون في السعودية', 'أتمتة أعمال', 'Dashboards ومنصات تشغيلية'],
+      type: 'شركة خاصة لخدمات الحجاج',
+      domain: ['عمليات خدمات الحجاج', 'مسارات عمل الحج', 'Dashboards ومنصات تشغيلية'],
       responsibilities: [
-        'تنفيذ modules مؤسسية لأتمتة الأعمال والتقارير.',
+        'تنفيذ modules تشغيلية لمسارات عمل خدمات الحجاج والتقارير.',
         'بناء API endpoints وربط شاشات Angular بالخدمات الخلفية.',
-        'دعم dashboards واستعلامات SQL Server والتصدير والتقارير.'
+        'دعم dashboards واستعلامات SQL Server والتصدير والتقارير لفرق الخدمة.'
       ],
       technologies: ['.NET Core', 'Angular', 'SQL Server', 'REST APIs', 'Dashboards', 'Reports']
     }
@@ -238,14 +238,14 @@ export const PORTFOLIO_AR: PortfolioData = {
       visualType: 'integration'
     },
     {
-      name: 'أنظمة مؤسسية سعودية لـ Oasis وSada',
+      name: 'أنظمة مؤسسية سعودية لـ Oasis وSada لخدمات الحجاج',
       category: 'مؤسسي',
       status: 'مشروع مؤسسي خاص',
-      shortDescription: 'مساهمات في dashboards وتقارير وأنظمة داخلية وAPIs وAngular لشركات سعودية.',
-      description: 'Modules أعمال وDashboards وتقارير وتكاملات لشركات برمجيات سعودية.',
-      overview: 'مجموعة مساهمات في أنظمة تشغيل وأتمتة وتقارير وواجهات Angular.',
-      businessContext: 'عملاء سعوديون احتاجوا modules تحول رقمي وتقارير ومنصات تشغيلية.',
-      problem: 'الحاجة لأنظمة داخلية لإدارة التشغيل والتقارير والتكاملات.',
+      shortDescription: 'مساهمات في أنظمة Oasis البرمجية ومسارات عمل Sada الخاصة بخدمات الحجاج، مع dashboards وتقارير وAPIs وAngular.',
+      description: 'Modules أعمال وDashboards وتقارير وتكاملات في سياقات برمجية وسياقات خدمات الحجاج.',
+      overview: 'مجموعة مساهمات في أنظمة تشغيل وخدمات حجاج وأتمتة وتقارير وواجهات Angular.',
+      businessContext: 'فرق أعمال سعودية وفرق خدمات حجاج احتاجت modules تحول رقمي وتقارير ومنصات تشغيلية.',
+      problem: 'الحاجة لأنظمة داخلية لإدارة التشغيل وخدمات الحجاج والتقارير والتكاملات.',
       myRole: 'ساهمت في APIs وAngular وSQL Server وdashboards وتقارير.',
       solution: 'تنفيذ APIs وواجهات Angular وworkflows قواعد بيانات وتقارير.',
       features: ['أتمتة أعمال', 'Dashboards', 'Operational modules', 'API integrations', 'Reports'],
