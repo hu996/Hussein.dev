@@ -13,6 +13,9 @@
         <a href="{{ data.github }}" target="_blank" rel="noreferrer">GitHub</a>
       </div>
       <form class="form" #contactForm="ngForm" (ngSubmit)="submit(contactForm)" novalidate>
+        <p class="integration-note" *ngIf="!isFormConfigured">
+          Contact form is prepared for integration. Until the endpoint is connected, please use email or LinkedIn.
+        </p>
         <div class="field">
           <label for="contact-name">{{ i18n.labels().contact.name }}</label>
           <input

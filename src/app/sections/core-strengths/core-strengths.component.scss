@@ -1,56 +1,65 @@
 .core-strengths {
-  padding: 5rem 0;
+  padding: 120px 0;
   background: var(--bg-soft);
   color: var(--text-main);
+  border-block: 1px solid var(--line);
 }
 
 .header {
-  margin-bottom: 3rem;
+  max-width: 720px;
+  margin: 0 auto 3rem;
   text-align: center;
 
   h2 {
-    margin-bottom: 0.75rem;
+    margin: 0 0 0.75rem;
+    color: var(--text-primary);
+    font-size: clamp(2rem, 4vw, 3.05rem);
+    line-height: 1.1;
   }
 
   p {
-    font-size: 1.1rem;
     color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
   }
 }
 
 .strengths-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.1rem;
 }
 
 .strength-card {
-  padding: 2rem;
-  background: var(--bg-white);
-  border: 1px solid var(--border-light);
-  border-radius: 12px;
+  padding: 1.55rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface);
   box-shadow: var(--shadow-card);
-  transition: all 0.3s ease;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 
   h3 {
-    margin-bottom: 1rem;
+    margin: 0 0 0.75rem;
     color: var(--text-main);
+    font-size: 1.16rem;
+    line-height: 1.3;
   }
 
   p {
+    margin: 0;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   &:hover {
-    border-color: var(--accent-blue);
-    box-shadow: var(--shadow-soft);
-    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.28);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
   }
 
   &.featured {
     grid-column: span 2;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(79, 70, 229, 0.05));
+    background: linear-gradient(145deg, rgba(56, 189, 248, 0.1), rgba(16, 26, 43, 0.9));
 
     @media (max-width: 768px) {
       grid-column: span 1;
@@ -60,7 +69,11 @@
 
 @media (max-width: 768px) {
   .core-strengths {
-    padding: 3rem 0;
+    padding: 76px 0;
+  }
+
+  .header {
+    text-align: left;
   }
 
   .strengths-grid {

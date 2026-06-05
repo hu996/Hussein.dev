@@ -22,7 +22,7 @@ export class ProjectsComponent {
   }
 
   get categories() {
-    return this.i18n.labels().projects.filters;
+    return [...this.i18n.labels().projects.filters];
   }
 
   get items() {

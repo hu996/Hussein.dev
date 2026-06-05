@@ -1,11 +1,13 @@
 .skill {
-  display: inline-block;
-  padding: 0.35rem 0.55rem;
-  border-radius: 8px;
-  background: rgba(45, 212, 191, 0.08);
-  border: 1px solid rgba(45, 212, 191, 0.16);
-  color: var(--text-2);
-  margin: 0.22rem;
-  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  margin: 0.18rem;
+  padding: 0.34rem 0.56rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  background: rgba(30, 41, 59, 0.38);
   font-size: 0.82rem;
+  font-weight: 750;
 }

@@ -85,7 +85,7 @@ export const PORTFOLIO: PortfolioData = {
       technologies: ['ASP.NET Core', 'SQL Server', 'FRA APIs', 'Reporting', 'SOLID', 'Design Patterns']
     },
     {
-      company: 'Sada',
+      company: 'Sada Information Technology',
       title: '.NET / Full Stack Developer',
       period: 'Project-based engagement',
       type: 'Private Pilgrims Services Company',
@@ -361,11 +361,11 @@ export const PORTFOLIO: PortfolioData = {
       visualType: 'integration'
     },
     {
-      name: 'Saudi Enterprise Systems for Oasis and Sada Pilgrims Services',
+      name: 'Saudi Enterprise Systems for Oasis and Sada Information Technology Pilgrims Services',
       category: 'Enterprise',
       status: 'Private Enterprise Project',
       shortDescription:
-        'Saudi enterprise work involving Oasis software systems and Sada private pilgrims services workflows, dashboards, reports, APIs, and Angular interfaces.',
+        'Saudi enterprise work involving Oasis software systems and Sada Information Technology private pilgrims services workflows, dashboards, reports, APIs, and Angular interfaces.',
       description:
         'Enterprise business modules, dashboards, reporting workflows and API integrations for Saudi software and pilgrims services contexts.',
       overview:

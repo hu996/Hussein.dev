@@ -13,11 +13,16 @@
     <h3>{{ project.name }}</h3>
     <p class="desc">{{ project.shortDescription || project.description }}</p>
     <div class="story">
-      <strong>{{ i18n.labels().projects.businessContext }}</strong>
-      <p>{{ project.businessContext }}</p>
-      <strong>{{ i18n.labels().projects.solution }}</strong>
-      <p>{{ project.solution }}</p>
+      <div>
+        <strong>{{ i18n.labels().projects.businessContext }}</strong>
+        <p>{{ project.businessContext }}</p>
+      </div>
+      <div>
+        <strong>{{ i18n.labels().projects.solution }}</strong>
+        <p>{{ project.solution }}</p>
+      </div>
     </div>
+    <p class="privacy-note" *ngIf="project.status.includes('Private')">Private enterprise project - code unavailable due to confidentiality.</p>
     <ul class="features">
       <li *ngFor="let f of project.features">{{ f }}</li>
     </ul>

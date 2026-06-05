@@ -1,14 +1,38 @@
 <footer class="site-footer">
-  <div class="wrap">
-    <div class="left">
-      <strong>{{ i18n.portfolio().personal.name }}</strong>
-      <span>{{ i18n.labels().footer.summary }}</span>
-    </div>
-    <div class="right">
-      <a href="https://github.com/hu996" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="https://linkedin.com/in/hussein-antar" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="#hero" class="top">{{ i18n.labels().footer.backToTop }}</a>
-    </div>
-    <div class="copy">{{ i18n.labels().footer.copyright }} {{ year }} / {{ i18n.portfolio().personal.location }}</div>
+  <div class="wrap footer-grid">
+    <section class="brand" aria-label="Portfolio summary">
+      <a class="footer-name" href="#hero">{{ personal.name }}</a>
+      <p class="role">{{ personal.title }}</p>
+      <p class="summary">{{ i18n.labels().footer.summary }}</p>
+    </section>
+
+    <nav class="footer-links" aria-label="Footer quick links">
+      <h2>Quick Links</h2>
+      <a *ngFor="let link of quickLinks" [href]="'#' + link.id">
+        {{ i18n.navLabel(link.labelKey) }}
+      </a>
+    </nav>
+
+    <section class="footer-links" aria-label="Social links">
+      <h2>Social</h2>
+      <a [href]="personal.github" target="_blank" rel="noreferrer">GitHub</a>
+      <a [href]="personal.linkedIn" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="mailto:{{ personal.email }}">Email</a>
+    </section>
+
+    <section class="contact-info" aria-label="Contact information">
+      <h2>Contact</h2>
+      <a href="mailto:{{ personal.email }}">{{ personal.email }}</a>
+      <span>{{ personal.location }}</span>
+    </section>
   </div>
+
+  <div class="wrap footer-bottom">
+    <span>{{ i18n.labels().footer.copyright }} {{ year }} / {{ personal.location }}</span>
+    <span>Full Stack .NET Developer</span>
+  </div>
+
+  <button class="back-to-top" type="button" aria-label="Back to top" (click)="scrollToTop()">
+    <span aria-hidden="true"></span>
+  </button>
 </footer>

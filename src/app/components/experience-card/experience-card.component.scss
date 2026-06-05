@@ -1,29 +1,35 @@
 .exp-card {
   position: relative;
-  background: var(--surface);
-  padding: 1.2rem;
-  border-radius: 8px;
-  color: var(--text);
+  padding: 1.35rem;
   border: 1px solid var(--line);
-  box-shadow: var(--shadow-card, 0 12px 35px rgba(15, 23, 42, 0.08));
+  border-radius: var(--radius-card);
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.exp-card:hover {
+  border-color: rgba(56, 189, 248, 0.28);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
 .exp-card::before {
   content: "";
   position: absolute;
   left: -1.55rem;
-  top: 1.2rem;
-  width: 10px;
-  height: 10px;
+  top: 1.45rem;
+  width: 9px;
+  height: 9px;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 0 6px rgba(138, 180, 248, 0.1);
+  box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.1);
 }
 
 .exp-card .head {
   display: grid;
-  grid-template-columns: 56px 1fr auto;
-  justify-content: space-between;
+  grid-template-columns: 52px 1fr auto;
   gap: 1rem;
   align-items: flex-start;
 }
@@ -31,63 +37,79 @@
 .logo {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  color: var(--ink);
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  font-weight: 950;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: 12px;
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.09);
+  font-weight: 900;
 }
 
 .role {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.28rem;
   color: var(--accent);
-  font-weight: 900;
+  font-weight: 850;
 }
 
 .exp-card h4 {
   margin: 0;
-  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-size: 1.16rem;
+  line-height: 1.35;
 }
 
 .period {
-  flex: 0 0 auto;
-  color: var(--accent-2);
+  color: var(--text-muted);
+  font-size: 0.88rem;
   font-weight: 800;
-  font-size: 0.9rem;
+  text-align: right;
 }
 
 .exp-card .meta {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin: 0.55rem 0;
+  margin: 0.75rem 0;
+  color: var(--text-muted);
+  font-size: 0.94rem;
 }
 
 .domain,
 .tech {
   display: flex;
-  gap: 0.5rem;
   flex-wrap: wrap;
+  gap: 0.48rem;
 }
 
 .domain span,
 .tech span {
+  padding: 0.33rem 0.52rem;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 0.32rem 0.52rem;
-  color: var(--text-2);
-  font-size: 0.82rem;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  background: rgba(30, 41, 59, 0.36);
+  font-size: 0.8rem;
+  font-weight: 720;
 }
 
 .resp {
-  margin: 0.9rem 0;
+  margin: 0.95rem 0;
   padding-left: 1.1rem;
-  color: var(--muted);
-  line-height: 1.65;
+  color: var(--text-secondary);
+  line-height: 1.68;
+}
+
+@media (max-width: 700px) {
+  .exp-card::before {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
   .exp-card .head {
-    grid-template-columns: 1fr;
+    grid-template-columns: 52px 1fr;
+  }
+
+  .period {
+    grid-column: 1 / -1;
+    text-align: left;
   }
 }

@@ -10,7 +10,13 @@ import { LanguageService } from '../../core/i18n/language.service';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  techBadges = ['ASP.NET Core', 'Angular', 'SQL Server', 'RabbitMQ', 'Redis', 'Azure'];
+  techBadges = ['ASP.NET Core', 'Angular', 'SQL Server', 'REST APIs'];
+  heroStats = [
+    { value: '3+', label: 'Years Experience' },
+    { value: '5+', label: 'Enterprise Systems' },
+    { value: '20+', label: 'Reports & Dashboards' },
+    { value: 'SQL', label: 'Optimization & APIs' }
+  ];
   typedText = '';
   private roleIndex = 0;
   private charIndex = 0;
@@ -25,6 +31,10 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   get data() {
     return this.i18n.portfolio().personal;
+  }
+
+  get trustedItems(): string[] {
+    return [...this.i18n.labels().hero.trusted];
   }
 
   ngOnInit(): void {

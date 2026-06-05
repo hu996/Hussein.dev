@@ -13,4 +13,23 @@ export class FooterComponent {
   constructor(public i18n: LanguageService) {}
 
   year = new Date().getFullYear();
+
+  quickLinks = [
+    { id: 'profile', labelKey: 'profile' },
+    { id: 'experience', labelKey: 'experience' },
+    { id: 'projects', labelKey: 'projects' },
+    { id: 'contact', labelKey: 'contact' }
+  ];
+
+  get personal() {
+    return this.i18n.portfolio().personal;
+  }
+
+  scrollToTop(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

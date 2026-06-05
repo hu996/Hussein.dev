@@ -12,7 +12,7 @@
 
   <div class="modal-backdrop" *ngIf="selectedProject" (click)="closeCaseStudy()">
     <article class="case-modal" role="dialog" aria-modal="true" [attr.aria-label]="i18n.labels().projects.close" (click)="$event.stopPropagation()">
-      <button class="close" type="button" [attr.aria-label]="i18n.labels().projects.close" (click)="closeCaseStudy()">×</button>
+      <button class="close" type="button" [attr.aria-label]="i18n.labels().projects.close" (click)="closeCaseStudy()">&times;</button>
       <span class="section-kicker">{{ selectedProject.category }}</span>
       <h4>{{ selectedProject.name }}</h4>
       <p>{{ selectedProject.overview || selectedProject.description }}</p>

@@ -85,7 +85,7 @@ export const PORTFOLIO_AR: PortfolioData = {
       technologies: ['ASP.NET Core', 'SQL Server', 'FRA APIs', 'Reporting', 'SOLID', 'Design Patterns']
     },
     {
-      company: 'Sada',
+      company: 'Sada Information Technology',
       title: 'مطوّر .NET / Full Stack',
       period: 'تعاون بنظام المشاريع',
       type: 'شركة خاصة لخدمات الحجاج',
@@ -238,10 +238,10 @@ export const PORTFOLIO_AR: PortfolioData = {
       visualType: 'integration'
     },
     {
-      name: 'أنظمة مؤسسية سعودية لـ Oasis وSada لخدمات الحجاج',
+      name: 'أنظمة مؤسسية سعودية لـ Oasis وSada Information Technology لخدمات الحجاج',
       category: 'مؤسسي',
       status: 'مشروع مؤسسي خاص',
-      shortDescription: 'مساهمات في أنظمة Oasis البرمجية ومسارات عمل Sada الخاصة بخدمات الحجاج، مع dashboards وتقارير وAPIs وAngular.',
+      shortDescription: 'مساهمات في أنظمة Oasis البرمجية ومسارات عمل Sada Information Technology الخاصة بخدمات الحجاج، مع dashboards وتقارير وAPIs وAngular.',
       description: 'Modules أعمال وDashboards وتقارير وتكاملات في سياقات برمجية وسياقات خدمات الحجاج.',
       overview: 'مجموعة مساهمات في أنظمة تشغيل وخدمات حجاج وأتمتة وتقارير وواجهات Angular.',
       businessContext: 'فرق أعمال سعودية وفرق خدمات حجاج احتاجت modules تحول رقمي وتقارير ومنصات تشغيلية.',

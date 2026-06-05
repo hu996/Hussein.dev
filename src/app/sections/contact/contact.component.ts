@@ -21,6 +21,10 @@ export class ContactComponent {
     return this.i18n.portfolio().personal;
   }
 
+  get isFormConfigured(): boolean {
+    return !!this.googleScriptUrl && this.googleScriptUrl !== 'PUT_YOUR_GOOGLE_SCRIPT_URL_HERE';
+  }
+
   model = { name: '', email: '', message: '', website: '' };
   statusMessage = '';
   statusType: 'success' | 'error' | '' = '';
@@ -50,7 +54,7 @@ export class ContactComponent {
       return;
     }
 
-    if (!this.googleScriptUrl || this.googleScriptUrl === 'PUT_YOUR_GOOGLE_SCRIPT_URL_HERE') {
+    if (!this.isFormConfigured) {
       this.showStatus(this.i18n.labels().contact.configError, 'error');
       return;
     }

@@ -1,102 +1,115 @@
 .projects {
   position: relative;
-  padding: 110px 0;
+  padding: 120px 0;
   color: var(--text);
   background: var(--bg-primary);
 }
 
-.section-kicker {
-  color: var(--accent-2);
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-}
-
 .projects h3 {
-  margin: 0.35rem 0 1rem;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 0.6rem 0 1.35rem;
+  color: var(--text-primary);
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.08;
 }
 
 .projects .filters {
   display: flex;
-  gap: 0.5rem;
-  margin: 0 0 1.2rem;
   flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0 0 1.75rem;
 }
 
 .projects .filters button {
-  background: rgba(255, 255, 255, 0.04);
+  min-height: 38px;
+  padding: 0.52rem 0.78rem;
   border: 1px solid var(--line);
-  color: var(--muted);
-  padding: 0.55rem 0.72rem;
-  border-radius: 8px;
+  border-radius: 999px;
+  color: var(--text-muted);
+  background: rgba(15, 23, 42, 0.5);
   font-weight: 800;
   cursor: pointer;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.projects .filters button:hover {
+  border-color: rgba(56, 189, 248, 0.28);
+  color: var(--text-secondary);
+  transform: translateY(-1px);
 }
 
 .projects .filters button.active {
-  background: var(--accent-soft);
+  border-color: rgba(56, 189, 248, 0.38);
   color: var(--accent);
-  border-color: rgba(138, 180, 248, 0.38);
+  background: var(--accent-soft);
 }
 
 .projects .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.3rem;
+  gap: 1.55rem;
   margin-top: 1rem;
 }
 
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 1000;
   display: grid;
   place-items: center;
   padding: 1rem;
-  background: rgba(2, 6, 23, 0.72);
+  background: rgba(2, 6, 23, 0.78);
+  backdrop-filter: blur(10px);
 }
 
 .case-modal {
   width: min(960px, 100%);
   max-height: min(86vh, 820px);
   overflow: auto;
+  padding: 1.45rem;
   border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--bg-secondary);
-  padding: 1.2rem;
+  border-radius: var(--radius-card);
+  background: linear-gradient(145deg, rgba(16, 26, 43, 0.98), rgba(8, 16, 30, 0.98));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
 }
 
 .case-modal h4 {
-  margin: 0.4rem 0 0.75rem;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin: 0.55rem 0 0.8rem;
+  color: var(--text-primary);
+  font-size: clamp(1.75rem, 4vw, 2.85rem);
+  line-height: 1.08;
 }
 
 .case-modal p {
-  color: var(--text-2);
-  line-height: 1.7;
+  color: var(--text-secondary);
+  line-height: 1.72;
 }
 
 .close {
   float: right;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--line);
-  color: var(--text);
+  border-radius: var(--radius-control);
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
   cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
 }
 
-.modal-grid {
+.close:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+  color: var(--accent);
+}
+
+.modal-grid,
+.case-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .case-columns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
   margin-top: 1rem;
 }
 
@@ -105,52 +118,64 @@
 .case-section {
   padding: 1rem;
   border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.035);
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.24);
 }
 
 .modal-grid strong {
+  display: block;
+  margin-bottom: 0.35rem;
   color: var(--accent);
 }
 
-.case-modal h5 { margin: 0 0 0.7rem; color: var(--text); }
+.case-modal h5 {
+  margin: 0 0 0.7rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
 
 .case-section {
   margin-top: 1rem;
 }
 
-.case-section ul, .case-columns ul {
+.case-section ul,
+.case-columns ul {
   margin: 0;
   padding-left: 1.1rem;
-  color: var(--text-2);
+  color: var(--text-secondary);
+  line-height: 1.65;
 }
 
 .modal-tech {
   display: flex;
-  gap: 0.5rem;
   flex-wrap: wrap;
+  gap: 0.5rem;
   list-style: none;
   padding: 0;
   margin: 1rem 0 0;
 }
 
 .modal-tech li {
-  padding: 0.35rem 0.55rem;
+  padding: 0.36rem 0.58rem;
   border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--text-2);
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.07);
+  font-size: 0.82rem;
+  font-weight: 750;
 }
 
 @media (max-width: 700px) {
-  .modal-grid {
-    grid-template-columns: 1fr;
+  .projects {
+    padding: 76px 0;
   }
 
+  .modal-grid,
   .case-columns {
     grid-template-columns: 1fr;
   }
 
-  .projects {
-    padding: 60px 0;
+  .case-modal {
+    padding: 1rem;
   }
 }

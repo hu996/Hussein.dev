@@ -10,6 +10,6 @@ import { PORTFOLIO } from '../../data/portfolio.data';
   styleUrls: ['./saudi-experience.component.scss']
 })
 export class SaudiExperienceComponent {
-  companies = PORTFOLIO.experience.filter(item => ['Oasis Computer Systems', 'Sada'].includes(item.company));
+  companies = PORTFOLIO.experience.filter(item => ['Oasis Computer Systems', 'Sada Information Technology'].includes(item.company));
   clientTypes = ['Saudi enterprise clients', 'Business operation teams', 'Internal systems', 'Digital transformation departments', 'Private sector companies'];
 }
